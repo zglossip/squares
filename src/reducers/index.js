@@ -1,4 +1,11 @@
-const initialState = {};
+const initialState = {
+  colors: [
+    'blueviolet',
+    'aquamarine',
+    'darkslateblue',
+    'blue'
+  ]
+};
 
 const rootReducer = (state = initialState, action) => {
   switch(action.type) {
