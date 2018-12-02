@@ -3,6 +3,7 @@ import Square from './Square';
 
 class App extends PureComponent{
   render() {
+    console.log(Square);
     return (
       <div className="container">
         <Square/>

@@ -16,6 +16,10 @@ class ConnectedSquare extends  Component {
     }
   }
 
+  test(testVar){
+    return testVar + 1;
+  }
+
   changeSquare(){
     let currentColor = this.state.currentColor;
 
