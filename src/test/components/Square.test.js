@@ -1,9 +1,22 @@
+import React from 'react';
+import Enzyme, {shallow} from 'enzyme';
 import Square from '../../components/Square';
+import Adapter from 'enzyme-adapter-react-16';
+import configureMockStore from 'redux-mock-store';
+import {Provider} from 'react-redux';
 
-test('two plus two is four', () => {
-  expect(2+2).toBe(4);
-});
+Enzyme.configure({adapter: new Adapter()});
 
-test('Square test', () => {
-  expect(Square.test(2)).toBe(3);
+const mockStore = configureMockStore();
+const store = mockStore({});
+
+describe('Square component', () => {
+    test('renders', () => {
+        const wrapper = shallow(
+            <Provider store={store}>
+                <Square></Square>
+            </Provider>
+        );
+        expect(wrapper.exists()).toBe(true);
+    });
 });
